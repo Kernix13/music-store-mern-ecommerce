@@ -13,6 +13,7 @@ import Home from './views/Home.jsx'
 import Details from './views/Details.jsx'
 import Cart from './views/Cart';
 import Login from './views/Login';
+import Register from './views/Register';
 import './assets/styles/bootstrap.custom.css'
 import './assets/styles/index.css';
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<Details />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
     </Route>
   )
 )
