@@ -16,6 +16,7 @@ import Cart from './views/Cart';
 import Login from './views/Login';
 import Register from './views/Register';
 import Shipping from './views/Shipping';
+import Payment from './views/Payment';
 import './assets/styles/bootstrap.custom.css'
 import './assets/styles/index.css';
 
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
 
       <Route path='' element={<PrivateRoute />}>
         <Route path='/shipping' element={<Shipping />} />
+        <Route path='/payment' element={<Payment />} />
       </Route>
 
     </Route>
