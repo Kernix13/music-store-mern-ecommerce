@@ -100,7 +100,7 @@ const Order = () => {
       refetch();
       toast.success('Order Delivered');
     } catch (err) {
-      toast.error(err?.data?.message || err.message);
+      toast.error(err?.data?.message || err.error);
     }
   };
 

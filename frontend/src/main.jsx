@@ -23,6 +23,8 @@ import PlaceOrder from './views/PlaceOrder';
 import Order from './views/Order';
 import Profile from './views/Profile';
 import OrderList from './views/admin/OrderList';
+import ProductList from './views/admin/ProductList';
+import ProductEdit from './views/admin/ProductEdit';
 import './assets/styles/bootstrap.custom.css'
 import './assets/styles/index.css';
 
@@ -45,6 +47,8 @@ const router = createBrowserRouter(
 
       <Route path='' element={<AdminRoute />}>
         <Route path='/admin/orderlist' element={<OrderList />} />
+        <Route path='/admin/productlist' element={<ProductList />} />
+        <Route path='/admin/product/:id/edit' element={<ProductEdit />} />
       </Route>
 
     </Route>
