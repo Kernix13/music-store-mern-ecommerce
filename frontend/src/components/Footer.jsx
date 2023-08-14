@@ -4,7 +4,7 @@ function Footer() {
   const currYear = new Date().getFullYear();
 
   return (
-    <footer>
+    <footer className="footer-bg text-light">
       <Container>
         <Row>
           <Col className="text-center py-3">
