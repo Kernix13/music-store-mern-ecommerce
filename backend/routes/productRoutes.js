@@ -6,7 +6,8 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
-  createProductReview
+  createProductReview,
+  getTopProducts
 } from "../controllers/productController.js";
 import { protect, admin } from '../middleware/authMiddleware.js';
 
@@ -14,6 +15,9 @@ import { protect, admin } from '../middleware/authMiddleware.js';
 router.route('/')
   .get(getProducts)
   .post(protect, admin, createProduct);
+
+// Top products route
+router.get('/top', getTopProducts);
 
 // Single product route
 router.route('/:id')

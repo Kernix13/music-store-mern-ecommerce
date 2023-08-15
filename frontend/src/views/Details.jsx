@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import Rating from '../components/Rating';
 import Loader from '../components/Loader';
 import Message from "../components/Message";
+import Meta from "../components/Meta";
 import { useGetProductDetailsQuery, useCreateReviewMutation } from "../slices/productsApiSlice";
 import { addToCart } from "../slices/cartSlice";
 
@@ -19,7 +20,7 @@ function Details() {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
-  const { data: product, isLoading, error } = useGetProductDetailsQuery(productId);
+  const { data: product, isLoading, error, refetch } = useGetProductDetailsQuery(productId);
 
   const [createReview, { isLoading: loadingProductReview }] = useCreateReviewMutation();
 
@@ -58,6 +59,7 @@ function Details() {
         <Message variant='danger'>{error?.data?.message || error.error}</Message>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
             <Col md={5}>
               <Image className="border border-secondary border-3" src={product.image} alt={product.name} fluid />
