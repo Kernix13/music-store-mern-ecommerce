@@ -1,4 +1,6 @@
 import express from 'express';
+import checkObjectId from '../middleware/checkObjectId.js';
+
 const router = express.Router();
 import { 
   getProducts, 
@@ -21,11 +23,11 @@ router.get('/top', getTopProducts);
 
 // Single product route
 router.route('/:id')
-  .get(getProductById)
-  .put(protect, admin, updateProduct)
-  .delete(protect, admin, deleteProduct);
+  .get(checkObjectId, getProductById)
+  .put(protect, admin, checkObjectId, updateProduct)
+  .delete(protect, admin, checkObjectId, deleteProduct);
 
 // Product reviews route
-router.route('/:id/reviews').post(protect, createProductReview);
+router.route('/:id/reviews').post(protect, checkObjectId, createProductReview);
 
 export default router;
