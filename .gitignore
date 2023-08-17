@@ -25,6 +25,6 @@ dist-ssr
 *.sw?
 
 # App files amd directories
-frontend/build
+frontend/dist
 uploads/*png
 uploads/*jpg
