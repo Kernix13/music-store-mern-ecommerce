@@ -51,7 +51,7 @@ const products = [
     name: 'Top-Notch Vocal Microphone',
     image: '/images/microphone.jpg',
     description:
-      'But this microphone for someone who loves to sing or who will not shut up and needs to be heard. It has the best quality and is very easy to use',
+      'Buy this microphone for someone who loves to sing or who will not shut up and needs to be heard. It has the best quality and is very easy to use',
     brand: 'Top-Notch',
     category: 'Music',
     price: 49.99,
