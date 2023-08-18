@@ -104,7 +104,10 @@ table th {
   color: #f1f7ff;
 }
 
-
+.bg-custom .list-item {
+  font-size: 2rem;
+  color: red;
+}
 
 .product-title:hover {
   color: #f8b525;
