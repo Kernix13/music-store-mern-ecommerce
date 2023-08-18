@@ -31,11 +31,11 @@ function Header() {
   
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar variant="dark" expand="md" collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-              <img src={logo} alt="MusicStore logo" />
+              {/* <img src={logo} alt="MusicStore logo" /> */}
               MusicStore
             </Navbar.Brand>
           </LinkContainer>

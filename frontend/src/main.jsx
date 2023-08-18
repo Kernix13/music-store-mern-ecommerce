@@ -28,6 +28,7 @@ import ProductList from './views/admin/ProductList';
 import ProductEdit from './views/admin/ProductEdit';
 import UserList from './views/admin/UserList';
 import UserEdit from './views/admin/UserEdit';
+import Search from './views/Search';
 import './assets/styles/bootstrap.custom.css'
 import './assets/styles/index.css';
 
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
     <Route path="/"element={<App />}>
       <Route index={true} path="/" element={<Home />} />
       <Route path="/search/:keyword" element={<Home />} />
+      <Route path="/search" element={<Search />} />
       <Route path="/page/:pageNumber" element={<Home />} />
       <Route path="/search/:keyword/page/:pageNumber" element={<Home />} />
       <Route path="/product/:id" element={<Details />} />

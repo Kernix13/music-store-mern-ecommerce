@@ -34,12 +34,12 @@ const __dirname = path.resolve(); // set __dirname to current directory
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 if (process.env.NODE_ENV === 'production') {
-  // set static folder (npm tun build)
-  app.use(express.static(path.join(__dirname, '/frontend/build')));
+  // set static folder (npm run build)
+  app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
   // any route that is not api will be redirected to index.html
   app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
   );
 } else {
   app.get('/', (req, res) => {

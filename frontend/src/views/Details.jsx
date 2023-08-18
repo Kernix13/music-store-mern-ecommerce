@@ -60,12 +60,13 @@ function Details() {
       ) : (
         <>
           <Meta title={product.name} />
+          <h1 className="heading details-heading">{product.name}</h1>
           <Row>
             <Col md={5}>
               <Image className="border border-secondary border-3" src={product.image} alt={product.name} fluid />
             </Col>
             <Col md={4}>
-              <ListGroup variant="flush">
+              <ListGroup variant="flush" className="bg-custom">
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
                 </ListGroup.Item>
