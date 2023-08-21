@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'; 
 import { NavDropdown, Badge, Navbar, Nav, Container } from 'react-bootstrap';
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaMusic, FaGuitar } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLogoutMutation } from '../slices/usersApiSlice';
@@ -36,7 +36,7 @@ function Header() {
           <LinkContainer to='/'>
             <Navbar.Brand>
               {/* <img src={logo} alt="MusicStore logo" /> */}
-              MusicStore
+              <FaGuitar /> <span className="logo-span">MusicStore</span>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -45,7 +45,7 @@ function Header() {
               <SearchBox />
               <LinkContainer to='/cart'>
                 <Nav.Link>
-                  <FaShoppingCart /> Cart
+                  <FaShoppingCart /> <span className='cart-span'>Cart</span>
                   {
                     cartItems.length > 0 && (
                       <Badge pill bg='success' style={{marginLeft: '5px'}}>

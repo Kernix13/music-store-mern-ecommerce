@@ -4,7 +4,7 @@ import Rating from './Rating';
 
 function Product({ product }) {
   return (
-    <Card className="my-3 p-2 rounded bg-custom">
+    <Card className="my-3 p-2 rounded bg-custom feature-card">
       <Link to={`/product/${product._id}`}>
         <Card.Img src={product.image} variant="top" />
       </Link>

@@ -21,6 +21,7 @@ const ProductEdit = () => {
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState('');
+  const [reviews, setReviews] = useState([]);
 
   const {
     data: product,
@@ -49,6 +50,7 @@ const ProductEdit = () => {
         category,
         description,
         countInStock,
+        reviews,
       }).unwrap(); // NOTE: here we need to unwrap the Promise to catch any rejection in our catch block
       toast.success('Product updated');
       refetch();
@@ -67,6 +69,7 @@ const ProductEdit = () => {
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setDescription(product.description);
+      setReviews(product.reviews);
     }
   }, [product]);
 
@@ -96,7 +99,7 @@ const ProductEdit = () => {
           <Message variant='danger'>{error.data.message}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+            <Form.Group controlId='name' className='edit-form-element'>
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type='text'
@@ -106,7 +109,7 @@ const ProductEdit = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='price'>
+            <Form.Group controlId='price' className='edit-form-element'>
               <Form.Label>Price</Form.Label>
               <Form.Control
                 type='number'
@@ -116,7 +119,7 @@ const ProductEdit = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='image' className='my-2'>
+            <Form.Group controlId='image' className='my-2 edit-form-element'>
               <Form.Label>Image</Form.Label>
               <Form.Control
                 type="text"
@@ -131,7 +134,7 @@ const ProductEdit = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='brand'>
+            <Form.Group controlId='brand' className='edit-form-element'>
               <Form.Label>Brand</Form.Label>
               <Form.Control
                 type='text'
@@ -141,7 +144,7 @@ const ProductEdit = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='countInStock'>
+            <Form.Group controlId='countInStock' className='edit-form-element'>
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
                 type='number'
@@ -151,7 +154,7 @@ const ProductEdit = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='category'>
+            <Form.Group controlId='category' className='edit-form-element'>
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type='text'
@@ -161,7 +164,7 @@ const ProductEdit = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='description'>
+            <Form.Group controlId='description' className='edit-form-element'>
               <Form.Label>Description</Form.Label>
               <Form.Control
                 type='text'
@@ -170,6 +173,20 @@ const ProductEdit = () => {
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
+
+            { reviews.length 
+              ? reviews.map((review, index) => (
+              <Form.Group key={review._id} controlId='review' className='edit-form-element'>
+                <Form.Label>Review {index + 1}</Form.Label>
+                <Form.Control
+                  
+                  type='text'
+                  value={review.comment}
+                  onChange={(e) => setReviews(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
+            )) 
+              : null }
 
             <Button
               type='submit'
