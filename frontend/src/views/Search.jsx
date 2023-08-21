@@ -10,6 +10,7 @@ import { useGetProductsQuery } from '../slices/productsApiSlice';
 function Search() {
   const { pageNumber, keyword } = useParams();
   const { data, isLoading, error } = useGetProductsQuery({ keyword, pageNumber });
+  
 
   return (
     <>
@@ -20,7 +21,6 @@ function Search() {
       ) : (
         <>
           <Meta />
-          <h1 className='heading'>No search results for </h1>
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

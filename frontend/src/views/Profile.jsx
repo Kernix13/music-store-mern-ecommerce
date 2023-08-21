@@ -61,7 +61,7 @@ const Profile = () => {
         <h2>User Profile</h2>
         <Form onSubmit={submitHandler}>
 
-          <Form.Group controlId='name' className='my-2'>
+          <Form.Group controlId='name' className='my-2 profile-field'>
             <Form.Label>Name</Form.Label>
             <Form.Control
               type='text'
@@ -71,7 +71,7 @@ const Profile = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId='email' className='my-2'>
+          <Form.Group controlId='email' className='my-2 profile-field'>
             <Form.Label>Email Address</Form.Label>
             <Form.Control
               type='email'
@@ -81,7 +81,7 @@ const Profile = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId='password' className='my-2'>
+          <Form.Group controlId='password' className='my-2 profile-field'>
             <Form.Label>Password</Form.Label>
             <Form.Control
               type='password'
@@ -91,7 +91,7 @@ const Profile = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId='confirmPassword' className='my-2'>
+          <Form.Group controlId='confirmPassword' className='my-2 profile-field'>
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
               type='password'
@@ -101,7 +101,7 @@ const Profile = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type='submit' variant='primary' className='my-2'>Update</Button>
+          <Button type='submit' variant='outline-light' className='my-2'>Update</Button>
 
           { loadingUpdateProfile && <Loader /> }
 
@@ -114,7 +114,7 @@ const Profile = () => {
           <Message variant='danger'>
             {error?.data?.message || error.error}
           </Message>) : (
-          <Table striped hover responsive className='table-sm'>
+          <Table striped hover bordered responsive className='table-sm'>
             <thead>
               <tr>
                 <th>ID</th>
@@ -125,7 +125,7 @@ const Profile = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='tbody'>
               {orders.map(order => (
                 <tr key={order._id}>
                   <td>{order._id}</td>
@@ -147,7 +147,7 @@ const Profile = () => {
                   </td>
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
-                      <Button className="btn-sm" variant="light">
+                      <Button className="btn-sm" variant='outline-light' >
                         Details
                       </Button>
                     </LinkContainer>

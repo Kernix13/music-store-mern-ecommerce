@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <>
-      { !keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light mb-4'>Back Home</Link> }
+      { !keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light mb-4'>Go Back</Link> }
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -22,7 +22,10 @@ function Home() {
       ) : (
         <>
           <Meta />
-          <h1 className='heading home-heading'>Latest Products</h1>
+          { !keyword 
+            ? <h1 className='heading home-heading'>Latest Products</h1>
+            : <h1 className='heading search-heading'>Search results for "<span className='search-term'>{keyword}</span>"</h1>
+          }
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
