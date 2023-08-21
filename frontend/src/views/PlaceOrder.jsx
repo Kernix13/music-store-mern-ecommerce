@@ -48,31 +48,30 @@ const PlaceOrder = () => {
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
-            <ListGroup.Item>
+            <ListGroup.Item className='bg-custom'>
               <h2>Shipping</h2>
               <p>
-                <strong>Address:</strong>
+                <strong>Address: </strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city} {
                   cart.shippingAddress.postalCode
                 }, {cart.shippingAddress.country}
               </p>
             </ListGroup.Item>
 
-            <ListGroup.Item>
+            <ListGroup.Item className='bg-custom'>
               <h2>Payment Method</h2>
               <strong>Method: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
 
-            <ListGroup.Item>
+            <ListGroup.Item className='bg-custom'>
               <h2>Order Items</h2>
               {cart.cartItems.length === 0 ? (
                 <Message>Your cart is empty</Message>
-                // <p>WTF</p>
               ) : (
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
-                    <ListGroup.Item key={index}>
+                    <ListGroup.Item key={index} className='mb-2'>
                       <Row>
                         <Col md={1}>
                           <Image src={item.image} alt={item.name} fluid rounded />
@@ -80,7 +79,7 @@ const PlaceOrder = () => {
                         <Col>
                           <Link to={`/product/${item.product}`}>{item.name}</Link>
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} className='text-body'>
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
@@ -92,8 +91,8 @@ const PlaceOrder = () => {
           </ListGroup>
         </Col>
         <Col md={4}>
-          <Card>
-            <ListGroup variant='flush'>
+          <Card className='cart-card'>
+            <ListGroup variant='flush' className='bg-custom'>
 
               <ListGroup.Item>
                 <h2>Order Summary</h2>
@@ -133,7 +132,9 @@ const PlaceOrder = () => {
 
               <ListGroup.Item>
                 <Button
+                  id='order-btn'
                   type='button'
+                  variant='outline-light'
                   className='btn-block'
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}

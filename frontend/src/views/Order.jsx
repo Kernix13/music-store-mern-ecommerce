@@ -107,14 +107,14 @@ const Order = () => {
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
-            <ListGroup.Item>
+            <ListGroup.Item className='bg-custom'>
               <h2>Shipping</h2>
               <p>
                 <strong>Name: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email</strong>{': '}
-                <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                <a className='text-light' href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
                 <strong>Address: </strong>
@@ -129,7 +129,7 @@ const Order = () => {
               )}
             </ListGroup.Item>
 
-            <ListGroup.Item>
+            <ListGroup.Item className='bg-custom'>
               <h2>Payment Method</h2>
               <p>
                 <strong>Method: </strong>
@@ -142,14 +142,14 @@ const Order = () => {
               )}
             </ListGroup.Item>
 
-            <ListGroup.Item>
+            <ListGroup.Item className='bg-custom'>
               <h2>Order Items</h2>
               {order.orderItems.length === 0 ? (
                 <Message>Order is empty</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
-                    <ListGroup.Item key={index}>
+                    <ListGroup.Item key={index} className='mb-2'>
                       <Row>
                         <Col md={1}>
                           <Image src={item.image} alt={item.name} fluid rounded />
@@ -171,28 +171,28 @@ const Order = () => {
         <Col md={4}>
           <Card>
             <ListGroup variant='flush'>
-              <ListGroup.Item>
+              <ListGroup.Item className='bg-custom'>
                 <h2>Order Summary</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='bg-custom'>
                 <Row>
                   <Col>Items</Col>
                   <Col>${order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='bg-custom'>
                 <Row>
                   <Col>Shipping</Col>
                   <Col>${order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='bg-custom'>
                 <Row>
                   <Col>Tax</Col>
                   <Col>${order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='bg-custom'>
                 <Row>
                   <Col>Total</Col>
                   <Col>${order.totalPrice}</Col>
@@ -200,7 +200,7 @@ const Order = () => {
               </ListGroup.Item>
 
               { !order.isPaid && (
-                <ListGroup.Item>
+                <ListGroup.Item className='bg-custom'>
                   {loadingPay && <Loader />}
                   {isPending ? <Loader /> : (
                     <div>
@@ -219,8 +219,8 @@ const Order = () => {
 
               { loadingDeliver && <Loader /> }
               { userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
-                <ListGroup.Item>
-                  <Button type='button' className='btn btn-block' onClick={deliverOrderHandler}>
+                <ListGroup.Item className='bg-custom'>
+                  <Button id='shipped-btn' type='button' variant='outline-light' className='btn btn-block' onClick={deliverOrderHandler}>
                     Mark As Delivered
                   </Button>
                 </ListGroup.Item>

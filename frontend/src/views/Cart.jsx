@@ -70,7 +70,7 @@ const CartScreen = () => {
         ) }
       </Col>
       <Col md={4}>
-        <Card id='cart-card' className='cart-card'>
+        <Card className='cart-card'>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>
