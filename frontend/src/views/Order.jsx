@@ -168,7 +168,7 @@ const Order = () => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col className='order-summary' md={4}>
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item className='bg-custom'>

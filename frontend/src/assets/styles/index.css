@@ -22,10 +22,6 @@ main {
 }
 
 /* Home page */
-.search-term {
-  font-style: italic;
-}
-
 .carousel-caption {
   position: absolute;
   width: 100%;
@@ -73,6 +69,10 @@ h3.card-text {
 header {
   border-bottom: 1px solid #888;
   padding: 0.5em 0;
+}
+
+.search-term {
+  font-style: italic;
 }
 
 .nav-link, .order-product-link {
@@ -142,7 +142,6 @@ header {
 .order {
   padding: 1em;
   margin-bottom: 1em;
-  border: 1px solid white;
 }
 
 .order-product-link a {
@@ -267,5 +266,19 @@ table th {
 @media (max-width: 768px) {
   .details {
     margin: 1em auto;
+  }
+
+  .search-box {
+    margin-top: 1em;
+  }
+
+  .order-summary {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-input, .search-btn {
+    padding: 0.3rem 0 0.3rem 0 !important;
   }
 }

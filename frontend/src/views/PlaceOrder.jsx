@@ -90,7 +90,7 @@ const PlaceOrder = () => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col className='order-summary' md={4}>
           <Card className='cart-card'>
             <ListGroup variant='flush' className='bg-custom'>
 
