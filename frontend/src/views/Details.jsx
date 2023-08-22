@@ -65,13 +65,17 @@ function Details() {
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid />
             </Col>
-            <Col md={4} className="bg-custom details">
-              <h3>{product.name}</h3>
-              <p>
-                <Rating value={product.rating} text={`${product.rating} (${product.numReviews} reviews)`} />
-              </p>
-              {/* <p>Price: ${product.price}</p> */}
-              <p className="description">{product.description}</p>
+            <Col md={4}>
+              <Card className="bg-custom details">
+                <ListGroup variant="flush" className="bg-custom stock">
+                <h3>{product.name}</h3>
+                <p>
+                  <Rating value={product.rating} text={`${product.rating} (${product.numReviews} reviews)`} />
+                </p>
+                {/* <p>Price: ${product.price}</p> */}
+                <p className="description">{product.description}</p>
+                </ListGroup>
+              </Card>
             </Col>
             <Col md={3}>
               <Card className="stock-card">

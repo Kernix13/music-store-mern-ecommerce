@@ -85,6 +85,23 @@ const ProductEdit = () => {
     }
   };
 
+  function reviewHandler(reviewId) {
+    return function ({ target: { value } }) {
+      setReviews(
+        reviews.map(review => {
+          if (review._id === reviewId) {
+            return {
+              ...review,
+              comment: value,
+            };
+          } else {
+            return review;
+          }
+        })
+      );
+    };
+  }
+
   return (
     <>
       <Link to='/admin/productlist' className='btn btn-light my-3'>
@@ -179,10 +196,9 @@ const ProductEdit = () => {
               <Form.Group key={review._id} controlId='review' className='edit-form-element'>
                 <Form.Label>Review {index + 1}</Form.Label>
                 <Form.Control
-                  
                   type='text'
                   value={review.comment}
-                  onChange={(e) => setReviews(e.target.value)}
+                  onChange={reviewHandler(review._id)}
                 ></Form.Control>
               </Form.Group>
             )) 

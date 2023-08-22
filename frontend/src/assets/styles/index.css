@@ -264,3 +264,8 @@ table th {
   color: #f1f7ff;
 }
 
+@media (max-width: 768px) {
+  .details {
+    margin: 1em auto;
+  }
+}
