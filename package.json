@@ -4,6 +4,9 @@
   "type": "module",
   "description": "MERN stack music store eCommerce app",
   "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
