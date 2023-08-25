@@ -1,5 +1,7 @@
 # Vite MERN Stack Ecommerce App
 
+The [live version](https://musicstore-p45e.onrender.com/) uses Render.com.
+
 ## Setup and run
 
 Create `.env`, copy the code in `.env.sample` and replace the values with your values. Then run:
@@ -101,3 +103,7 @@ In `productController.js`:
 
 3. In `updateProduct` add `reviews` to the destructuring of `req.body` and
 4. in the conditional add `product.reviews = reviews;`.
+
+## Miscellaneous
+
+...notes here
