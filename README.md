@@ -20,9 +20,9 @@ You can add custom css in `frontend/src/assets/styles/index.css`. That is the fi
 
 ## Seeding the local Database
 
-1. Check the file in the backend called `seeder.js`
-2. Go into root `package.json` add add 2 scripts: `npm run data:import` and `npm run data:destroy`
-3. `node backend/seeder` will run the file but there are 2 functions in it
+1. Check the file in the backend called `seeder.js`.
+2. Go into root `package.json` add add 2 scripts: `npm run data:import` and `npm run data:destroy`.
+3. `node backend/seeder` will run the file but there are 2 functions in it:
    1. to run `destroyData` use `node backend/seeder -d`, and
    2. no `-d` for `importData`
 
