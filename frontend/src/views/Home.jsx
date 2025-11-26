@@ -24,7 +24,7 @@ function Home() {
           <Meta />
           { !keyword 
             ? <h1 className='heading home-heading'>Latest Products</h1>
-            : <h1 className='heading search-heading'>Search results for "<span className='search-term'>{keyword}</span>"</h1>
+            : <h1 className='heading search-heading'>Search results for &ldquo;<span className='search-term'>{keyword}</span>&ldquo;</h1>
           }
           <Row>
             {data.products.map((product) => (
